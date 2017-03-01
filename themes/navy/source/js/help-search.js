@@ -13,12 +13,14 @@ window.addEventListener('load', function () {
     }
     flag ++
   }, 1000);
+
   getClass('help-search-input')[0].addEventListener('keyup', function (e) {
     keyword = this.value;
     if (e.keyCode === 13 && this.value.trim() !== '') {
       doSearch(keyword, 1)
     }
   })
+  
   var searchFailed = function (word, err) {
     clearInterval(timer);
     searchContents.forEach(function(element, index){

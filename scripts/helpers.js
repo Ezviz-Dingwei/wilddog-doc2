@@ -108,6 +108,8 @@ hexo.extend.helper.register('help_tags', function(tagName){
   _.each(posts.data, function (val, key) {
     // val.tags
     _.each(val.tags.data, function (tag) {
+      
+      // tagName 页面传过来
       if (tag.name === tagName) {
         var $ = cheerio.load(val.content, {decodeEntities: false});
         var content = $('p').eq(0);
